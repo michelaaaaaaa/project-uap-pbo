@@ -4,14 +4,14 @@ USE kasir_mini;
 CREATE TABLE users (
     id_users INT AUTO_INCREMENT PRIMARY KEY,
     username VARCHAR(50) UNIQUE NOT NULL,
-    password VARCHAR(255) NOT NULL,
-    nama VARCHAR(100) NOT NULL,
+    password VARCHAR(20) NOT NULL,
+    nama VARCHAR(50) NOT NULL,
     role ENUM('admin', 'kasir') NOT NULL
 );
 
 CREATE TABLE barang (
     id_barang INT AUTO_INCREMENT PRIMARY KEY,
-    nama_barang VARCHAR(100) NOT NULL,
+    nama_barang VARCHAR(50) NOT NULL,
     harga DOUBLE NOT NULL,
     stok INT NOT NULL
 );
