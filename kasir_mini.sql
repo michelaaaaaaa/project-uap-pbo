@@ -34,3 +34,7 @@ CREATE TABLE detail_transaksi (
     FOREIGN KEY (id_transaksi) REFERENCES transaksi(id_transaksi),
     FOREIGN KEY (id_barang) REFERENCES barang(id_barang)
 );
+
+INSERT INTO users (username, password, nama, role) VALUES 
+('admin', 'admin123', 'Administrator', 'admin');
+('kasir1', 'kasir123', 'Kasir Satu', 'kasir');
