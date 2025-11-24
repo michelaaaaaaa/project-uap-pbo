@@ -2,7 +2,7 @@ CREATE DATABASE kasir_mini;
 USE kasir_mini;
 
 CREATE TABLE users (
-    id_user INT AUTO_INCREMENT PRIMARY KEY,
+    id_users INT AUTO_INCREMENT PRIMARY KEY,
     username VARCHAR(50) UNIQUE NOT NULL,
     password VARCHAR(255) NOT NULL,
     nama VARCHAR(100) NOT NULL,
@@ -20,8 +20,8 @@ CREATE TABLE transaksi (
     id_transaksi INT AUTO_INCREMENT PRIMARY KEY,
     tanggal DATETIME NOT NULL,
     total DOUBLE NOT NULL,
-    id_user INT NOT NULL,
-    FOREIGN KEY (id_user) REFERENCES user(id_user)
+    id_users INT NOT NULL,
+    FOREIGN KEY (id_users) REFERENCES users(id_users)
 );
 
 CREATE TABLE detail_transaksi (
@@ -36,5 +36,5 @@ CREATE TABLE detail_transaksi (
 );
 
 INSERT INTO users (username, password, nama, role) VALUES 
-('admin', 'admin123', 'Administrator', 'admin');
+('admin', 'admin123', 'Administrator', 'admin'),
 ('kasir1', 'kasir123', 'Kasir Satu', 'kasir');
