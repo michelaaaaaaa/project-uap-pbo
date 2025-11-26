@@ -3,35 +3,87 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.effect.DropShadow?>
 
-<AnchorPane xmlns="http://javafx.com/javafx/13"
-            xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="com.kasirmini.kasirmini.LoginController"
-            prefWidth="400" prefHeight="350"
-            style="-fx-background-color: linear-gradient(to bottom, #6a11cb, #2575fc);">
+<StackPane xmlns="http://javafx.com/javafx/13"
+           xmlns:fx="http://javafx.com/fxml/1"
+           fx:controller="com.kasirmini.kasirmini.LoginController"
+           prefWidth="800" prefHeight="600"
+           style="-fx-background-color: linear-gradient(to bottom, #8fd3ff, #5aa9ff);">
 
-    <VBox spacing="15" alignment="CENTER"
-          layoutX="50" layoutY="40"
-          prefWidth="300"
-          style="-fx-background-color: white; -fx-background-radius: 15;">
+    <!-- BACKGROUND AWAN -->
+    <AnchorPane>
+        <children>
+            <!-- kiri atas -->
+            <Circle radius="55" layoutX="150" layoutY="120" fill="white" opacity="0.9"/>
+            <Circle radius="45" layoutX="195" layoutY="110" fill="white" opacity="0.8"/>
+            <Circle radius="35" layoutX="120" layoutY="155" fill="white" opacity="0.8"/>
 
+            <!-- kanan atas -->
+            <Circle radius="55" layoutX="650" layoutY="120" fill="white" opacity="0.9"/>
+            <Circle radius="45" layoutX="605" layoutY="110" fill="white" opacity="0.8"/>
+            <Circle radius="35" layoutX="680" layoutY="155" fill="white" opacity="0.8"/>
+
+            <!-- kanan bawah -->
+            <Circle radius="60" layoutX="650" layoutY="480" fill="white" opacity="0.9"/>
+            <Circle radius="40" layoutX="610" layoutY="465" fill="white" opacity="0.8"/>
+        </children>
+    </AnchorPane>
+
+    <!-- WRAPPER UNTUK MENURUNKAN CARD SEDIKIT -->
+    <VBox alignment="TOP_CENTER" prefWidth="800" prefHeight="600">
         <padding>
-            <Insets top="30" right="30" bottom="30" left="30"/>
+            <!-- atur top supaya card turun sedikit ke bawah (seperti di gambar) -->
+            <Insets top="90" right="0" bottom="0" left="0"/>
         </padding>
 
-        <Label text="Kasir Mini - Login"
-               style="-fx-font-size: 22px; -fx-font-weight: bold;"/>
+        <!-- CARD LOGIN (PERSIS GAYA DI GAMBAR) -->
+        <VBox spacing="18" alignment="CENTER"
+              prefWidth="520" prefHeight="380"
+              style="-fx-background-color: rgba(255,255,255,0.97);
+                     -fx-background-radius: 36;">
+            <padding>
+                <Insets top="40" right="60" bottom="40" left="60"/>
+            </padding>
 
-        <TextField fx:id="txtUsername" promptText="Username"
-                   style="-fx-background-radius: 8; -fx-padding: 8;"/>
+            <effect>
+                <DropShadow radius="18" offsetY="6" color="#4a89c999"/>
+            </effect>
 
-        <PasswordField fx:id="txtPassword" promptText="Password"
-                       style="-fx-background-radius: 8; -fx-padding: 8;"/>
+            <!-- ICON USER -->
+            <Label text="👤"
+                   style="-fx-font-size: 40px;"/>
 
-        <Button text="Login" onAction="#handleLogin"
-                style="-fx-background-color: #2575fc; -fx-text-fill: white;
-                       -fx-background-radius: 8; -fx-padding: 10; -fx-font-size: 14px;"/>
+            <!-- JUDUL -->
+            <Label text="Kasir Mini"
+                   style="-fx-font-size: 26px; -fx-font-weight: bold;
+                          -fx-text-fill: #003366;"/>
 
+            <!-- USERNAME -->
+            <TextField fx:id="txtUsername"
+                       promptText="Username"
+                       maxWidth="360"
+                       style="-fx-background-radius: 999; -fx-padding: 12;
+                              -fx-border-radius: 999; -fx-border-color: #c9d9ff;
+                              -fx-background-color: white;"/>
+
+            <!-- PASSWORD -->
+            <PasswordField fx:id="txtPassword"
+                           promptText="Password"
+                           maxWidth="360"
+                           style="-fx-background-radius: 999; -fx-padding: 12;
+                                  -fx-border-radius: 999; -fx-border-color: #c9d9ff;
+                                  -fx-background-color: white;"/>
+
+            <!-- TOMBOL LOGIN -->
+            <Button text="Login"
+                    onAction="#handleLogin"
+                    maxWidth="220"
+                    style="-fx-background-color: #004a93; -fx-text-fill: white;
+                           -fx-background-radius: 999; -fx-padding: 12;
+                           -fx-font-size: 15px; -fx-font-weight: bold;"/>
+        </VBox>
     </VBox>
 
-</AnchorPane>
+</StackPane>
