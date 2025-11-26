@@ -1,1 +1,49 @@
+package com.kasirmini.kasirmini;
+
+public class SessionData {
+
+    private static int idUsers;
+    private static String username;
+    private static String nama;
+    private static String role;
+
+    public static int getIdUsers() {
+        return idUsers;
+    }
+
+    public static void setIdUsers(int id) {
+        idUsers = id;
+    }
+
+    public static String getUsername() {
+        return username;
+    }
+
+    public static void setUsername(String u) {
+        username = u;
+    }
+
+    public static String getNama() {
+        return nama;
+    }
+
+    public static void setNama(String n) {
+        nama = n;
+    }
+
+    public static String getRole() {
+        return role;
+    }
+
+    public static void setRole(String r) {
+        role = r;
+    }
+
+    public static void clear() {
+        idUsers = 0;
+        username = null;
+        nama = null;
+        role = null;
+    }
+}
 
