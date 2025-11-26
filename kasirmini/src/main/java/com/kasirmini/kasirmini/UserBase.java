@@ -1,0 +1,23 @@
+package com.kasirmini.kasirmini;
+
+public abstract class UserBase {
+    protected int id;
+    protected String username;
+    protected String nama;
+    protected String role;
+
+    public UserBase(int id, String username, String nama, String role) {
+        this.id = id;
+        this.username = username;
+        this.nama = nama;
+        this.role = role;
+    }
+
+    public int getId() { return id; }
+    public String getUsername() { return username; }
+    public String getNama() { return nama; }
+    public String getRole() { return role; }
+
+    // POLYMORPHISM (abstract method → di-override)
+    public abstract String getHomeFxml();
+}
