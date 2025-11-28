@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.effect.DropShadow?>
+
+<BorderPane xmlns="http://javafx.com/javafx/13"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.kasirmini.kasirmini.TransaksiController"
+            prefWidth="800" prefHeight="520"
+            style="-fx-background-color: linear-gradient(to bottom, #8fd3ff, #5aa9ff);">
+
+    <!-- HEADER -->
+    <top>
+        <VBox spacing="5" alignment="CENTER">
+            <padding>
+                <Insets top="15" right="10" bottom="10" left="10"/>
+            </padding>
+            <Label text="Transaksi Penjualan"
+                   style="-fx-font-size: 22px; -fx-font-weight: bold; -fx-text-fill: #003366;"/>
+        </VBox>
+    </top>
+
+    <!-- CARD TENGAH -->
+    <center>
+        <VBox alignment="CENTER">
+            <padding>
+                <Insets top="5" right="10" bottom="10" left="10"/>
+            </padding>
+
+            <HBox spacing="10" alignment="CENTER"
+                  prefHeight="400" prefWidth="760"
+                  style="-fx-background-color: rgba(255,255,255,0.95);
+                         -fx-background-radius: 24;">
+                <padding>
+                    <Insets top="15" right="15" bottom="15" left="15"/>
+                </padding>
+
+                <effect>
+                    <DropShadow radius="12" offsetY="4" color="#4a89c999"/>
+                </effect>
+
+                <!-- TABEL BARANG -->
+                <VBox spacing="8">
+                    <Label text="Daftar Barang"
+                           style="-fx-font-weight: bold; -fx-text-fill: #003366;"/>
+
+                    <TableView fx:id="tblBarang" prefWidth="360" prefHeight="320">
+                        <columns>
+                            <TableColumn fx:id="colNamaBarang" text="Nama" prefWidth="180"/>
+                            <TableColumn fx:id="colHargaBarang" text="Harga" prefWidth="80"/>
+                            <TableColumn fx:id="colStokBarang" text="Stok" prefWidth="80"/>
+                        </columns>
+                    </TableView>
+
+                    <HBox spacing="10" alignment="CENTER_LEFT">
+                        <Label text="Qty:"/>
+                        <TextField fx:id="txtQty" prefWidth="60"/>
+                        <Button text="Tambah ke Keranjang" onAction="#tambahKeKeranjang"
+                                style="-fx-background-color: #3498db; -fx-text-fill: white;
+                                       -fx-background-radius: 999; -fx-padding: 6 12;"/>
+                    </HBox>
+                </VBox>
+
+                <!-- TABEL KERANJANG -->
+                <VBox spacing="8">
+                    <Label text="Keranjang"
+                           style="-fx-font-weight: bold; -fx-text-fill: #003366;"/>
+
+                    <TableView fx:id="tblKeranjang" prefWidth="360" prefHeight="320">
+                        <columns>
+                            <TableColumn fx:id="colNamaKeranjang" text="Nama" prefWidth="160"/>
+                            <TableColumn fx:id="colQtyKeranjang" text="Qty" prefWidth="60"/>
+                            <TableColumn fx:id="colHargaKeranjang" text="Harga" prefWidth="70"/>
+                            <TableColumn fx:id="colSubtotalKeranjang" text="Subtotal" prefWidth="70"/>
+                        </columns>
+                    </TableView>
+
+                    <HBox spacing="10" alignment="CENTER_LEFT">
+                        <Button text="Hapus dari Keranjang" onAction="#hapusDariKeranjang"
+                                style="-fx-background-color: #e74c3c; -fx-text-fill: white;
+                                       -fx-background-radius: 999; -fx-padding: 6 12;"/>
+                    </HBox>
+                </VBox>
+            </HBox>
+        </VBox>
+    </center>
+
+    <!-- BAGIAN BAWAH -->
+    <bottom>
+        <VBox spacing="8">
+            <padding>
+                <Insets top="5" right="10" bottom="15" left="10"/>
+            </padding>
+
+            <Label fx:id="lblTotal" text="Total: Rp 0"
+                   style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #003366;"/>
+
+            <HBox spacing="10">
+                <Button text="Simpan Transaksi" onAction="#simpanTransaksi"
+                        style="-fx-background-color: #2ecc71; -fx-text-fill: white;
+                               -fx-background-radius: 999; -fx-padding: 6 16;"/>
+                <Button text="Kembali ke Menu Kasir" onAction="#kembaliMenuKasir"
+                        style="-fx-background-color: #3498db; -fx-text-fill: white;
+                               -fx-background-radius: 999; -fx-padding: 6 16;"/>
+            </HBox>
+        </VBox>
+    </bottom>
+
+</BorderPane>

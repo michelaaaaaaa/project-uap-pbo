@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.effect.DropShadow?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/13"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.kasirmini.kasirmini.RiwayatTransaksiController"
+            prefWidth="750" prefHeight="500"
+            style="-fx-background-color: linear-gradient(to bottom, #8fd3ff, #5aa9ff);">
+
+    <!-- AWAN DEKORASI -->
+    <Circle radius="40" layoutX="110" layoutY="80" fill="white" opacity="0.85"/>
+    <Circle radius="30" layoutX="150" layoutY="70" fill="white" opacity="0.8"/>
+    <Circle radius="25" layoutX="80" layoutY="100" fill="white" opacity="0.8"/>
+
+    <Circle radius="35" layoutX="630" layoutY="70" fill="white" opacity="0.85"/>
+    <Circle radius="28" layoutX="660" layoutY="85" fill="white" opacity="0.8"/>
+    <Circle radius="25" layoutX="600" layoutY="90" fill="white" opacity="0.8"/>
+
+    <Circle radius="45" layoutX="640" layoutY="420" fill="white" opacity="0.85"/>
+    <Circle radius="30" layoutX="600" layoutY="410" fill="white" opacity="0.8"/>
+
+    <!-- CARD UTAMA -->
+    <VBox spacing="15" alignment="TOP_CENTER"
+          layoutX="60" layoutY="60"
+          prefWidth="630" prefHeight="380"
+          style="-fx-background-color: rgba(255,255,255,0.95);
+                 -fx-background-radius: 24;">
+        <padding>
+            <Insets top="20" right="20" bottom="20" left="20"/>
+        </padding>
+
+        <effect>
+            <DropShadow radius="12" offsetY="4" color="#4a89c999"/>
+        </effect>
+
+        <Label text="Riwayat Transaksi"
+               style="-fx-font-size: 22px; -fx-font-weight: bold; -fx-text-fill: #003366;"/>
+
+        <TableView fx:id="tblRiwayat" prefHeight="280" prefWidth="590">
+            <columns>
+                <TableColumn fx:id="colIdTrans" text="ID" prefWidth="60"/>
+                <TableColumn fx:id="colTanggal" text="Tanggal" prefWidth="200"/>
+                <TableColumn fx:id="colKasir" text="Kasir" prefWidth="150"/>
+                <TableColumn fx:id="colTotal" text="Total" prefWidth="130"/>
+            </columns>
+        </TableView>
+
+        <HBox spacing="10" alignment="CENTER">
+            <Button text="Export Riwayat" onAction="#exportRiwayat"
+                    style="-fx-background-color: #8e44ad; -fx-text-fill: white;
+                           -fx-background-radius: 999; -fx-padding: 8 16;"/>
+
+            <Button text="Kembali ke Menu Kasir" onAction="#kembaliMenuKasir"
+                    style="-fx-background-color: #3498db; -fx-text-fill: white;
+                           -fx-background-radius: 999; -fx-padding: 8 16;"/>
+        </HBox>
+
+    </VBox>
+
+</AnchorPane>
