@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.effect.DropShadow?>
+
+<StackPane xmlns="http://javafx.com/javafx/13"
+           xmlns:fx="http://javafx.com/fxml/1"
+           fx:controller="com.kasirmini.kasirmini.KasirController"
+           prefWidth="800" prefHeight="600"
+           style="-fx-background-color: linear-gradient(to bottom, #8fd3ff, #5aa9ff);">
+
+    <!-- BACKGROUND AWAN (sama seperti login) -->
+    <AnchorPane>
+        <children>
+            <!-- kiri atas -->
+            <Circle radius="55" layoutX="150" layoutY="120" fill="white" opacity="0.9"/>
+            <Circle radius="45" layoutX="195" layoutY="110" fill="white" opacity="0.8"/>
+            <Circle radius="35" layoutX="120" layoutY="155" fill="white" opacity="0.8"/>
+
+            <!-- kanan atas -->
+            <Circle radius="55" layoutX="650" layoutY="120" fill="white" opacity="0.9"/>
+            <Circle radius="45" layoutX="605" layoutY="110" fill="white" opacity="0.8"/>
+            <Circle radius="35" layoutX="680" layoutY="155" fill="white" opacity="0.8"/>
+
+            <!-- kanan bawah -->
+            <Circle radius="60" layoutX="650" layoutY="480" fill="white" opacity="0.9"/>
+            <Circle radius="40" layoutX="610" layoutY="465" fill="white" opacity="0.8"/>
+        </children>
+    </AnchorPane>
+
+    <!-- WRAPPER UNTUK MENURUNKAN CARD -->
+    <VBox alignment="TOP_CENTER" prefWidth="800" prefHeight="600">
+        <padding>
+            <Insets top="90" right="0" bottom="0" left="0"/>
+        </padding>
+
+        <!-- CARD MENU KASIR -->
+        <VBox spacing="14" alignment="CENTER"
+              prefWidth="520" prefHeight="360"
+              style="-fx-background-color: rgba(255,255,255,0.97);
+                     -fx-background-radius: 36;">
+            <padding>
+                <Insets top="30" right="60" bottom="30" left="60"/>
+            </padding>
+
+            <effect>
+                <DropShadow radius="18" offsetY="6" color="#4a89c999"/>
+            </effect>
+
+            <Label text="🛒"
+                   style="-fx-font-size: 36px;"/>
+
+            <!-- diisi dari controller -->
+            <Label fx:id="lblWelcomeKasir"
+                   style="-fx-font-size: 20px; -fx-font-weight: bold;
+                          -fx-text-fill: #003366;"/>
+
+            <Label text="Menu Kasir - Transaksi Penjualan"
+                   style="-fx-font-size: 13px; -fx-text-fill: #4a4a4a;"/>
+
+            <VBox spacing="10" alignment="CENTER">
+                <Button text="Transaksi"
+                        onAction="#goTransaksi"
+                        maxWidth="260"
+                        style="-fx-background-color: linear-gradient(to right, #0072ff, #00c6ff);
+                               -fx-text-fill: white; -fx-font-weight: bold;
+                               -fx-background-radius: 999; -fx-padding: 10;"/>
+
+                <Button text="Riwayat Transaksi"
+                        onAction="#goRiwayat"
+                        maxWidth="260"
+                        style="-fx-background-color: linear-gradient(to right, #2ecc71, #00d084);
+                               -fx-text-fill: white; -fx-font-weight: bold;
+                               -fx-background-radius: 999; -fx-padding: 10;"/>
+
+                <Button text="Logout"
+                        onAction="#logout"
+                        maxWidth="260"
+                        style="-fx-background-color: #e74c3c; -fx-text-fill: white;
+                               -fx-background-radius: 999; -fx-padding: 10;
+                               -fx-font-weight: bold;"/>
+            </VBox>
+        </VBox>
+    </VBox>
+
+</StackPane>
